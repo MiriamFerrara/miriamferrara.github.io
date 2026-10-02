@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VARIABILI GLOBALI (Tema Chiaro & Accenti Verde Smeraldo)
+   VARIABILI GLOBALI (Tema Chiaro Default)
    ========================================================================== */
 :root {
   /* Sfondi e Testi */
@@ -22,7 +22,28 @@
 }
 
 /* ==========================================================================
-   RESET GLOBALE (Elimina margini indesiderati e blocchi a larghezza fissa)
+   MODALITÀ SCURA (Sostituzione automatica delle variabili)
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Sfondi e Testi per Tema Scuro */
+    --bg-light: #0f172a;          /* Sfondo scuro / profondo */
+    --bg-card: rgba(30, 41, 59, 0.85);
+    --text-main: #f8fafc;        /* Testo chiaro */
+    --text-muted: #94a3b8;       /* Grigio medio chiaro */
+    --border: #334155;            /* Bordo scuro */
+
+    /* Palette Verde Smeraldo adattata */
+    --emerald-primary: #10b981;    /* Smeraldo leggermente più acceso su sfondo scuro */
+    --emerald-dark: #059669;
+    --emerald-soft: #064e3b;       /* Smeraldo scuro per badge e pill */
+    --emerald-glow: rgba(16, 185, 129, 0.3);
+    --emerald-overlay: rgba(16, 185, 129, 0.35);
+  }
+}
+
+/* ==========================================================================
+   RESET GLOBALE
    ========================================================================== */
 * {
   box-sizing: border-box;

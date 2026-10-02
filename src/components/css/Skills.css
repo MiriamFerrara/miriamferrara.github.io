@@ -24,7 +24,7 @@
 }
 
 /* ==========================================================================
-   HEADER SEZIONE (CONVERTITO IN SPAN CON DISPLAY BLOCK)
+   HEADER SEZIONE
    ========================================================================== */
 
 .skills-header {
@@ -81,7 +81,7 @@
 }
 
 .tech-row:hover {
-  background-color: rgba(16, 185, 129, 0.02);
+  background-color: rgba(16, 185, 129, 0.03);
 }
 
 .tech-row-info {
@@ -113,7 +113,7 @@
   margin: 0;
 }
 
-/* CHIP TECNOLOGICI */
+/* CHIP TECNOLOGICI ADATTATI AL TEMA */
 
 .tech-row-skills {
   display: flex;
@@ -123,13 +123,13 @@
 }
 
 .skill-chip {
-  background-color: rgba(16, 185, 129, 0.07);
+  background-color: var(--emerald-soft); /* Coerente con le altre sezioni */
   color: var(--text-main);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.45rem 0.9rem;
   border-radius: 8px;
-  border: 1px solid rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   transition: all 0.2s ease;
   user-select: none;
 }
@@ -139,7 +139,7 @@
   color: #ffffff;
   border-color: var(--emerald-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 4px 12px var(--emerald-glow);
 }
 
 /* ==========================================================================

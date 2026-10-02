@@ -7,14 +7,13 @@
   background-color: var(--bg-light);
 }
 
-/* Definiamo il Flexbox affiancato specifico per l'About su Desktop */
+/* Flexbox affiancato su Desktop */
 #about.hero-split {
   display: flex;
-  flex-direction: row; /* Mantiene Foto e Testo AFFIANCATI su Desktop */
+  flex-direction: row;
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  height: 100vh;
   background-color: var(--bg-light);
   overflow: hidden;
   position: relative;
@@ -25,12 +24,12 @@
 #about .hero-split-media {
   flex: 0 0 30%;
   max-width: 30%;
-  height: 100%;
+  min-height: 100%;
   position: relative;
   overflow: hidden;
 }
 
-/* LATO DESTRA: Contenuto Testuale (70% larghezza) */
+/* LATO DESTRO: Contenuto Testuale (70% larghezza) */
 #about .hero-split-content {
   flex: 0 0 70%;
   max-width: 70%;
@@ -46,7 +45,7 @@
   );
 }
 
-/* Sfumatura dell'immagine verso destra (verso il testo) */
+/* Sfumatura dell'immagine adattata alla Dark Mode */
 #about .hero-split-overlay {
   position: absolute;
   top: 0;
@@ -56,7 +55,7 @@
   background: linear-gradient(
           270deg,
           var(--bg-light) 0%,
-          rgba(248, 250, 252, 0.15) 25%,
+          transparent 35%,
           var(--emerald-overlay) 100%
   );
   pointer-events: none;
@@ -77,11 +76,11 @@
 }
 
 .about-card {
-  background: #ffffff;
+  background: var(--bg-card); /* Adattato dinamicamente alla Dark Mode */
   border-left: 4px solid var(--emerald-primary);
   padding: 2rem 2.5rem;
   border-radius: 0 12px 12px 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .about-card-title {
@@ -103,7 +102,7 @@
 }
 
 /* ==========================================================================
-   CARD SPECIAL: PASSIONI & FOTO ELVIS (Ottimizzato per foto 2040x1148)
+   CARD SPECIAL: PASSIONI & FOTO ELVIS
    ========================================================================== */
 
 .about-card-split {
@@ -117,20 +116,23 @@
 }
 
 .about-card-media {
-  flex: 0 0 280px; /* Larghezza adeguata per foto orizzontali */
+  flex: 0 0 280px;
   max-width: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .elvis-img {
-  width: 180%;
-  height: 150px; /* Proporzione panoramica adatta a 2040x1148 */
-  object-fit: cover; /* Scala la foto ad alta risoluzione senza distorcerla */
-  object-position: center; /* Mantiene il fuoco al centro dell'immagine */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  border-radius: 12px;
 }
 
 .elvis-img:hover {
@@ -151,7 +153,7 @@
   }
 
   .elvis-img {
-    height: 300px;
+    height: 220px;
   }
 }
 
@@ -160,10 +162,8 @@
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  /* Solo su schermi piccoli (<1024px) incolonna gli elementi */
   #about.hero-split {
     flex-direction: column;
-    height: auto;
     min-height: 100vh;
     min-height: 100dvh;
     padding-top: 60px;
@@ -187,7 +187,7 @@
     background: linear-gradient(
             0deg,
             var(--bg-light) 0%,
-            rgba(248, 250, 252, 0.1) 50%,
+            transparent 50%,
             var(--emerald-overlay) 100%
     );
   }

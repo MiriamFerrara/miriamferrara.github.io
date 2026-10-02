@@ -1,11 +1,17 @@
 /* ==========================================================================
-   FOOTER VERDE SMERALDO (#064e3b) - CONTRASTO ELEVATO & MASSIMA LEGGIBILITÀ
+   FOOTER (Smeraldo Scuro ad Alto Contrasto)
    ========================================================================== */
 
 .site-footer {
+  --footer-bg: #064e3b;          /* Verde Smeraldo scuro */
+  --footer-text-light: #ffffff;   /* Testo/Logo bianco */
+  --footer-text-mint: #a7f3d0;    /* Menta brillante ad alta leggibilità */
+  --footer-accent: #047857;       /* Sfondo icone */
+  --footer-border: #10b981;       /* Bordi icone e separatori */
+
   width: 100%;
-  background-color: #064e3b !important; /* Verde Smeraldo principale */
-  color: #ecfdf5 !important;
+  background-color: var(--footer-bg);
+  color: var(--footer-text-mint);
   padding: 3.5rem 2rem 2rem 2rem;
   box-sizing: border-box;
 }
@@ -31,14 +37,14 @@
 .footer-logo {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #ffffff !important;
+  color: var(--footer-text-light);
   margin: 0 0 0.4rem 0;
   letter-spacing: -0.02em;
 }
 
 .footer-brand .footer-tagline {
   font-size: 0.92rem;
-  color: #a7f3d0 !important; /* Menta brillante perfettamente visibile su smeraldo scuro */
+  color: var(--footer-text-mint);
   margin: 0;
   line-height: 1.5;
 }
@@ -51,7 +57,7 @@
 }
 
 .footer-nav a {
-  color: #a7f3d0 !important;
+  color: var(--footer-text-mint);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
@@ -59,7 +65,7 @@
 }
 
 .footer-nav a:hover {
-  color: #ffffff !important;
+  color: var(--footer-text-light);
 }
 
 /* ICONE SOCIAL */
@@ -75,24 +81,25 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background-color: #047857;
-  color: #ffffff !important;
+  background-color: var(--footer-accent);
+  color: var(--footer-text-light);
   text-decoration: none;
-  border: 1px solid #10b981;
+  border: 1px solid var(--footer-border);
   transition: all 0.2s ease;
 }
 
 .footer-socials a:hover {
-  background-color: #10b981;
+  background-color: var(--footer-border);
   border-color: #34d399;
-  color: #ffffff !important;
+  color: var(--footer-text-light);
   transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 /* LINEA DIVISORIA */
 .footer-divider {
   border: none;
-  border-top: 1px solid #047857 !important;
+  border-top: 1px solid var(--footer-accent);
   margin: 2.5rem 0 1.8rem 0;
 }
 
@@ -105,17 +112,14 @@
   gap: 1rem;
 }
 
-/* Regola tassativa per forzare il colore menta brillante senza ereditarietà scura */
-.footer-bottom p,
-.footer-bottom .copyright-text,
-.footer-bottom .footer-sub-info {
-  color: #a7f3d0 !important;
-  font-size: 0.9rem !important;
-  font-weight: 600 !important;
-  margin: 0 !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.site-footer .footer-bottom p,
+.site-footer .footer-bottom .copyright-text,
+.site-footer .footer-bottom .footer-sub-info {
+  color: var(--footer-text-mint);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  display: block;
 }
 
 /* RESPONSIVE */

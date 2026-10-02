@@ -23,7 +23,7 @@ Il portfolio è pubblicato e raggiungibile all'indirizzo: **[https://miriamferra
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: React, JavaScript (ES6+)
+* **Frontend**: React, JavaScript 
 * **Styling**: CSS3 (Flexbox, CSS Grid, Custom Variables)
 * **Build Tool**: Vite
 * **Hosting & Deployment**: GitHub Pages

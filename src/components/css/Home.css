@@ -6,7 +6,6 @@
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  height: 100vh;
   background-color: var(--bg-light);
   overflow: hidden;
   position: relative;
@@ -74,12 +73,12 @@
 }
 
 /* ==========================================================================
-   LATO DESTRO: FOTO FULL-HEIGHT (MEZZO BUSTO MANTENUTO)
+   LATO DESTRO: FOTO FULL-HEIGHT
    ========================================================================== */
 .hero-split-media {
   flex: 0 0 30%;
   max-width: 30%;
-  height: 100%;
+  min-height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -100,7 +99,7 @@
   transition: transform 0.7s ease;
 }
 
-/* Sfumatura orizzontale fluida da sinistra a destra per Desktop */
+/* Sfumatura orizzontale dinamica (adattata a Dark Mode) */
 .hero-split-overlay {
   position: absolute;
   top: 0;
@@ -110,7 +109,7 @@
   background: linear-gradient(
           90deg,
           var(--bg-light) 0%,
-          rgba(248, 250, 252, 0.15) 25%,
+          transparent 35%,
           var(--emerald-overlay) 100%
   );
   pointer-events: none;
@@ -141,18 +140,16 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE) - CORRETTO
+   RESPONSIVE DESIGN (TABLET & MOBILE)
    ========================================================================== */
 @media (max-width: 1024px) {
   #home.hero-split {
     flex-direction: column-reverse;
-    height: auto;
     min-height: 100vh;
     min-height: 100dvh;
     padding-top: 60px;
   }
 
-  /* RESET: Annulla il 70% e il 30% per far occupare tutta la larghezza sui telefoni */
   .hero-split-content,
   .hero-split-media {
     flex: 1 0 100%;
@@ -165,17 +162,19 @@
 
   .hero-split-media {
     height: 48vh;
+    min-height: auto;
   }
 
   .hero-split-img {
     object-position: center 15%;
   }
 
+  /* Sfumatura verticale dinamica per mobile */
   .hero-split-overlay {
     background: linear-gradient(
             0deg,
             var(--bg-light) 0%,
-            rgba(248, 250, 252, 0.1) 50%,
+            transparent 60%,
             var(--emerald-overlay) 100%
     );
   }
@@ -183,7 +182,7 @@
 
 @media (max-width: 640px) {
   .hero-split-media {
-    height: 42vh;
+    height: 40vh;
   }
 
   .hero-split-subtitle {

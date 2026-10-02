@@ -53,9 +53,9 @@
   line-height: 1.6;
   color: var(--text-muted);
   font-weight: 400;
-  max-width: 850px; /* Aumentato per permettere alla frase di stare su una riga nei desktop */
+  max-width: 850px;
   margin: 0;
-  text-wrap: pretty; /* Previene le parole vedove su browser moderni */
+  text-wrap: pretty;
 }
 
 /* ==========================================================================
@@ -109,11 +109,11 @@
    ========================================================================== */
 
 .project-card {
-  background: #ffffff;
+  background: var(--bg-card); /* Adattato dinamicamente alla Dark Mode */
   border-radius: 16px;
   padding: 2rem;
   border: 1px solid rgba(16, 185, 129, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -123,7 +123,7 @@
 .project-card:hover {
   transform: translateY(-6px);
   border-color: var(--emerald-primary);
-  box-shadow: 0 14px 30px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 14px 30px rgba(16, 185, 129, 0.15);
 }
 
 .project-card-header {
@@ -181,13 +181,13 @@
 }
 
 .project-tag {
-  background-color: rgba(16, 185, 129, 0.08);
+  background-color: var(--emerald-soft);
   color: var(--emerald-primary);
   font-size: 0.78rem;
   font-weight: 600;
   padding: 0.35rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .project-links {
@@ -213,7 +213,7 @@
 
 .project-link.demo {
   color: var(--emerald-primary);
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: var(--emerald-soft);
   padding: 0.4rem 0.85rem;
   border-radius: 8px;
   border: 1px solid rgba(16, 185, 129, 0.2);
@@ -230,7 +230,8 @@
 
 .project-card-featured {
   border-left: 5px solid #f59e0b;
-  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+  background: var(--bg-card);
+  position: relative;
 }
 
 .project-header-top {
@@ -241,17 +242,17 @@
 }
 
 .ongoing-category {
-  color: #d97706;
+  color: #f59e0b;
 }
 
 .status-badge {
-  background-color: #fef3c7;
-  color: #b45309;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
   font-size: 0.78rem;
   font-weight: 700;
   padding: 0.25rem 0.65rem;
   border-radius: 20px;
-  border: 1px solid #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 /* ==========================================================================
