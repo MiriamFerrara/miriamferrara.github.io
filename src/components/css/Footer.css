@@ -1,0 +1,133 @@
+/* ==========================================================================
+   FOOTER VERDE SMERALDO (#064e3b) - CONTRASTO ELEVATO & MASSIMA LEGGIBILITÀ
+   ========================================================================== */
+
+.site-footer {
+  width: 100%;
+  background-color: #064e3b !important; /* Verde Smeraldo principale */
+  color: #ecfdf5 !important;
+  padding: 3.5rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PARTE SUPERIORE */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-brand {
+  max-width: 380px;
+}
+
+.footer-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin: 0 0 0.4rem 0;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand .footer-tagline {
+  font-size: 0.92rem;
+  color: #a7f3d0 !important; /* Menta brillante perfettamente visibile su smeraldo scuro */
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* LINK NAVIGAZIONE */
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #a7f3d0 !important;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: #ffffff !important;
+}
+
+/* ICONE SOCIAL */
+.footer-socials {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #047857;
+  color: #ffffff !important;
+  text-decoration: none;
+  border: 1px solid #10b981;
+  transition: all 0.2s ease;
+}
+
+.footer-socials a:hover {
+  background-color: #10b981;
+  border-color: #34d399;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+}
+
+/* LINEA DIVISORIA */
+.footer-divider {
+  border: none;
+  border-top: 1px solid #047857 !important;
+  margin: 2.5rem 0 1.8rem 0;
+}
+
+/* PARTE INFERIORE (Copyright e Sub-info) */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Regola tassativa per forzare il colore menta brillante senza ereditarietà scura */
+.footer-bottom p,
+.footer-bottom .copyright-text,
+.footer-bottom .footer-sub-info {
+  color: #a7f3d0 !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

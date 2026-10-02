@@ -1,0 +1,237 @@
+/* ==========================================================================
+   SEZIONE SKILLS - HARMONIZED WITH HOME (MINIMAL LIST - NO CARDS)
+   ========================================================================== */
+
+.skills-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-light);
+  padding: 100px 3rem 5rem 3rem;
+  box-sizing: border-box;
+  position: relative;
+  background: radial-gradient(
+          circle at top left,
+          rgba(16, 185, 129, 0.08),
+          transparent 55%
+  );
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* ==========================================================================
+   HEADER SEZIONE (CONVERTITO IN SPAN CON DISPLAY BLOCK)
+   ========================================================================== */
+
+.skills-header {
+  display: block;
+  margin-bottom: 3.5rem;
+  text-align: left;
+}
+
+.skills-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.skills-title-highlight {
+  background: linear-gradient(135deg, var(--text-main) 20%, var(--emerald-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.skills-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-weight: 400;
+  max-width: 900px;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   COMPETENZE TECNICHE - RIGHE MINIMALI CON SEPARATORI
+   ========================================================================== */
+
+.tech-list-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4.5rem;
+  border-top: 1px solid rgba(16, 185, 129, 0.18);
+}
+
+.tech-row {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.tech-row:hover {
+  background-color: rgba(16, 185, 129, 0.02);
+}
+
+.tech-row-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.tech-row-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--emerald-primary);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.tech-row-dot.ongoing-dot {
+  background-color: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.tech-row-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* CHIP TECNOLOGICI */
+
+.tech-row-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.skill-chip {
+  background-color: rgba(16, 185, 129, 0.07);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.18);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.skill-chip:hover {
+  background-color: var(--emerald-primary);
+  color: #ffffff;
+  border-color: var(--emerald-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+/* ==========================================================================
+   SOFT SKILLS - LAYOUT LINEARE
+   ========================================================================== */
+
+.soft-skills-section {
+  margin-top: 1rem;
+}
+
+.soft-header-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.soft-main-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.soft-skills-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-left: 2px solid rgba(16, 185, 129, 0.25);
+  padding-left: 1.5rem;
+  margin-left: 0.4rem;
+}
+
+.soft-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.soft-item:hover {
+  transform: translateX(5px);
+}
+
+.soft-number {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--emerald-primary);
+  letter-spacing: 0.05em;
+  min-width: 28px;
+}
+
+.soft-item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* ==========================================================================
+   ANIMAZIONI & RESPONSIVE
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .tech-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-page {
+    padding: 80px 1.5rem 4rem 1.5rem;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .soft-skills-timeline {
+    padding-left: 1.2rem;
+  }
+}

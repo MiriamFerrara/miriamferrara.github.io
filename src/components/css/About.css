@@ -1,0 +1,202 @@
+/* ==========================================================================
+   ABOUT PAGE - LAYOUT SPLIT (Foto a Sinistra, Testo a Destra)
+   ========================================================================== */
+
+.about-page {
+  width: 100%;
+  background-color: var(--bg-light);
+}
+
+/* Definiamo il Flexbox affiancato specifico per l'About su Desktop */
+#about.hero-split {
+  display: flex;
+  flex-direction: row; /* Mantiene Foto e Testo AFFIANCATI su Desktop */
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  background-color: var(--bg-light);
+  overflow: hidden;
+  position: relative;
+  padding-top: 2px;
+}
+
+/* LATO SINISTRO: Foto (30% larghezza) */
+#about .hero-split-media {
+  flex: 0 0 30%;
+  max-width: 30%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LATO DESTRA: Contenuto Testuale (70% larghezza) */
+#about .hero-split-content {
+  flex: 0 0 70%;
+  max-width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 5rem 2rem 3rem;
+  z-index: 2;
+  background: radial-gradient(
+          circle at top right,
+          rgba(16, 185, 129, 0.12),
+          transparent 55%
+  );
+}
+
+/* Sfumatura dell'immagine verso destra (verso il testo) */
+#about .hero-split-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+          270deg,
+          var(--bg-light) 0%,
+          rgba(248, 250, 252, 0.15) 25%,
+          var(--emerald-overlay) 100%
+  );
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SEZIONE DETTAGLI (CARD INFERIORI)
+   ========================================================================== */
+
+.about-details-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+}
+
+.about-card {
+  background: #ffffff;
+  border-left: 4px solid var(--emerald-primary);
+  padding: 2rem 2.5rem;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.about-card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.about-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CARD SPECIAL: PASSIONI & FOTO ELVIS (Ottimizzato per foto 2040x1148)
+   ========================================================================== */
+
+.about-card-split {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.about-card-text {
+  flex: 1;
+}
+
+.about-card-media {
+  flex: 0 0 280px; /* Larghezza adeguata per foto orizzontali */
+  max-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elvis-img {
+  width: 180%;
+  height: 150px; /* Proporzione panoramica adatta a 2040x1148 */
+  object-fit: cover; /* Scala la foto ad alta risoluzione senza distorcerla */
+  object-position: center; /* Mantiene il fuoco al centro dell'immagine */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.elvis-img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsiveness per Mobile */
+@media (max-width: 768px) {
+  .about-card-split {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-card-media {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .elvis-img {
+    height: 300px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  /* Solo su schermi piccoli (<1024px) incolonna gli elementi */
+  #about.hero-split {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: 60px;
+  }
+
+  #about .hero-split-media,
+  #about .hero-split-content {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+
+  #about .hero-split-media {
+    height: 48vh;
+  }
+
+  #about .hero-split-content {
+    padding: 2.5rem 1.5rem;
+  }
+
+  #about .hero-split-overlay {
+    background: linear-gradient(
+            0deg,
+            var(--bg-light) 0%,
+            rgba(248, 250, 252, 0.1) 50%,
+            var(--emerald-overlay) 100%
+    );
+  }
+
+  .about-details-section {
+    padding: 2.5rem 1.5rem 4rem 1.5rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+}
