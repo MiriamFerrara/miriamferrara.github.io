@@ -17,7 +17,7 @@
   background-color: var(--bg-light);
   overflow: hidden;
   position: relative;
-  padding-top: 70px;
+  padding-top: 2px;
 }
 
 /* LATO SINISTRO: Foto (30% larghezza) */
@@ -141,39 +141,40 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE) - FIX MOBILITÀ E SCROLL
+   RESPONSIVE DESIGN (TABLET & MOBILE) - AFFIANCATO
    ========================================================================== */
 
 @media (max-width: 1024px) {
   #about.hero-split {
-    flex-direction: column;
+    flex-direction: row; /* Mantiene foto a sinistra e testo a destra */
     min-height: auto;
     height: auto;
     overflow: visible;
     padding-top: 80px;
+    padding-bottom: 2rem;
+    align-items: stretch;
   }
 
-  #about .hero-split-media,
-  #about .hero-split-content {
-    flex: none;
-    width: 100%;
-    max-width: 100%;
-  }
-
+  /* Foto a sinistra (35%) */
   #about .hero-split-media {
-    height: 35vh;
+    flex: 0 0 35%;
+    max-width: 35%;
+    height: auto;
     min-height: 250px;
   }
 
+  /* Testo a destra (65%) */
   #about .hero-split-content {
-    padding: 2rem 1.5rem;
+    flex: 0 0 65%;
+    max-width: 65%;
+    padding: 1.5rem 1rem 1.5rem 1.25rem;
   }
 
   #about .hero-split-overlay {
     background: linear-gradient(
-            0deg,
+            270deg,
             var(--bg-light) 0%,
-            transparent 50%,
+            transparent 40%,
             var(--emerald-overlay) 100%
     );
   }
@@ -202,15 +203,23 @@
 
 @media (max-width: 640px) {
   #about .hero-split-media {
-    height: 30vh;
+    flex: 0 0 32%;
+    max-width: 32%;
     min-height: 220px;
   }
 
+  #about .hero-split-content {
+    flex: 0 0 68%;
+    max-width: 68%;
+    padding: 1rem 0.5rem 1rem 1rem;
+  }
+
   .about-card-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .about-card p {
-    font-size: 0.98rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 }

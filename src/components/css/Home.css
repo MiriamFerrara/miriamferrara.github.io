@@ -140,48 +140,58 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE) - FIX MOBILITÀ E SCROLL
+   RESPONSIVE DESIGN (TABLET & MOBILE) - LAYOUT AFFIANCATO
    ========================================================================== */
 @media (max-width: 1024px) {
   #home.hero-split {
-    flex-direction: column-reverse;
+    flex-direction: row; /* Mantiene foto e testo uno a fianco all'altro */
     min-height: auto;
     height: auto;
     overflow: visible;
     padding-top: 80px;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
+    align-items: stretch;
   }
 
-  .hero-split-content,
-  .hero-split-media {
-    flex: none;
-    width: 100%;
-    max-width: 100%;
-  }
-
+  /* Testo a sinistra (65% dello schermo) */
   .hero-split-content {
-    padding: 2rem 1.5rem;
+    flex: 0 0 65%;
+    max-width: 65%;
+    padding: 1.5rem 1rem 1.5rem 1.25rem;
   }
 
+  /* Foto a destra (35% dello schermo) */
   .hero-split-media {
-    height: 35vh;
+    flex: 0 0 35%;
+    max-width: 35%;
+    height: auto;
     min-height: 250px;
   }
 
   .hero-split-img {
-    object-position: center 20%;
+    object-position: center 15%;
   }
 
+  /* Riduzione del font per permettere al testo di stare in uno spazio stretto */
   .hero-split-title {
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-size: clamp(1.3rem, 5vw, 2rem);
   }
 
-  /* Sfumatura verticale dinamica per mobile */
+  .hero-split-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-split-text {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  /* Sfumatura orizzontale */
   .hero-split-overlay {
     background: linear-gradient(
-            0deg,
+            90deg,
             var(--bg-light) 0%,
-            transparent 60%,
+            transparent 40%,
             var(--emerald-overlay) 100%
     );
   }
@@ -189,19 +199,31 @@
 
 @media (max-width: 640px) {
   .hero-split-content {
-    padding: 1.5rem 1.25rem;
+    flex: 0 0 68%;
+    max-width: 68%;
+    padding: 1rem 0.5rem 1rem 1rem;
   }
 
   .hero-split-media {
-    height: 30vh;
+    flex: 0 0 32%;
+    max-width: 32%;
     min-height: 220px;
   }
 
+  .hero-split-inner {
+    gap: 0.6rem;
+  }
+
+  .hero-split-title {
+    font-size: 1.2rem;
+  }
+
   .hero-split-subtitle {
-    font-size: 1.15rem;
+    font-size: 0.9rem;
   }
 
   .hero-split-text {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }
