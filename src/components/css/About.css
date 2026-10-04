@@ -17,7 +17,7 @@
   background-color: var(--bg-light);
   overflow: hidden;
   position: relative;
-  padding-top: 2px;
+  padding-top: 70px;
 }
 
 /* LATO SINISTRO: Foto (30% larghezza) */
@@ -76,7 +76,7 @@
 }
 
 .about-card {
-  background: var(--bg-card); /* Adattato dinamicamente alla Dark Mode */
+  background: var(--bg-card);
   border-left: 4px solid var(--emerald-primary);
   padding: 2rem 2.5rem;
   border-radius: 0 12px 12px 0;
@@ -116,18 +116,18 @@
 }
 
 .about-card-media {
-  flex: 0 0 320px;       /* Portato a 320px per dare respiro al formato molto largo */
+  flex: 0 0 320px;
   max-width: 320px;
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  flex-shrink: 0;         /* Impedisce al testo di schiacciare l'immagine */
+  flex-shrink: 0;
 }
 
 .elvis-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 2040 / 880; /* Rapporto d'aspetto esatto 2040x880 */
+  aspect-ratio: 2040 / 880;
   object-fit: cover;
   object-position: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -140,44 +140,33 @@
   transform: scale(1.03);
 }
 
-/* Responsiveness per Mobile */
-@media (max-width: 768px) {
-  .about-card-split {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .about-card-media {
-    flex: 1 1 100%;
-    max-width: 100%;
-    width: 100%;
-  }
-}
-
 /* ==========================================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
+   RESPONSIVE DESIGN (TABLET & MOBILE) - FIX MOBILITÀ E SCROLL
    ========================================================================== */
 
 @media (max-width: 1024px) {
   #about.hero-split {
     flex-direction: column;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding-top: 60px;
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+    padding-top: 80px;
   }
 
   #about .hero-split-media,
   #about .hero-split-content {
-    flex: 1 0 100%;
+    flex: none;
+    width: 100%;
     max-width: 100%;
   }
 
   #about .hero-split-media {
-    height: 48vh;
+    height: 35vh;
+    min-height: 250px;
   }
 
   #about .hero-split-content {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   #about .hero-split-overlay {
@@ -190,10 +179,38 @@
   }
 
   .about-details-section {
-    padding: 2.5rem 1.5rem 4rem 1.5rem;
+    padding: 2rem 1.25rem 3rem 1.25rem;
   }
 
   .about-card {
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-card-split {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-card-media {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  #about .hero-split-media {
+    height: 30vh;
+    min-height: 220px;
+  }
+
+  .about-card-title {
+    font-size: 1.4rem;
+  }
+
+  .about-card p {
+    font-size: 0.98rem;
   }
 }
