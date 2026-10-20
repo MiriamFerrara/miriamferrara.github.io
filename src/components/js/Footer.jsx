@@ -3,12 +3,12 @@ import '../css/Footer.css';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
+    const cvUrl = `${import.meta.env.BASE_URL}../altro/Miriam_Ferrara_cv.pdf`;
 
     return (
         <footer className="site-footer">
             <div className="footer-container">
 
-                {/* PARTE SUPERIORE */}
                 <div className="footer-top">
                     <div className="footer-brand">
                         <h3 className="footer-logo">Miriam Ferrara</h3>
@@ -22,7 +22,19 @@ function Footer() {
                         <a href="#about">Chi sono</a>
                         <a href="#skills">Skills</a>
                         <a href="#projects">Progetti</a>
+                        <a href="#certificates">Attestati</a>
                         <a href="#contact">Contatti</a>
+                        <a href="#more">Altro</a>
+
+                        <a
+                            href={cvUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="footer-cv-btn"
+                            title="Curriculum Vitae (Protetto da Password)"
+                        >
+                            CV 🔒
+                        </a>
                     </nav>
 
                     <div className="footer-socials">
@@ -67,7 +79,6 @@ function Footer() {
 
                 <hr className="footer-divider" />
 
-                {/* PARTE INFERIORE */}
                 <div className="footer-bottom">
                     <p className="copyright-text">
                         © {currentYear} Miriam Ferrara

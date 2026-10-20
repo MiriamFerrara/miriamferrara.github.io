@@ -28,6 +28,7 @@ function Header({ menuOpen, setMenuOpen }) {
                     <a href="#about" onClick={() => setMenuOpen(false)}>Chi sono</a>
                     <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
                     <a href="#projects" onClick={() => setMenuOpen(false)}>Progetti</a>
+                    <a href="#certificates" onClick={() => setMenuOpen(false)}>Attestati</a>
                     <a href="#contact" className="nav-btn" onClick={() => setMenuOpen(false)}>Contatti</a>
                 </nav>
 

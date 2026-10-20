@@ -52,6 +52,7 @@
 /* LINK NAVIGAZIONE */
 .footer-nav {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -66,6 +67,31 @@
 
 .footer-nav a:hover {
   color: var(--footer-text-light);
+}
+
+/* PULSANTE RISERVATO CV NEL FOOTER */
+.footer-cv-btn {
+  background-color: var(--footer-accent);
+  border: 1px solid var(--footer-border);
+  color: var(--footer-text-mint);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.footer-cv-btn:hover {
+  background-color: var(--footer-border);
+  color: var(--footer-text-light);
+  border-color: #34d399;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 /* ICONE SOCIAL */
@@ -103,7 +129,7 @@
   margin: 2.5rem 0 1.8rem 0;
 }
 
-/* PARTE INFERIORE (Copyright e Sub-info) */
+/* PARTE INFERIORE */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -132,6 +158,7 @@
 
   .footer-nav {
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.8rem;
   }
 }

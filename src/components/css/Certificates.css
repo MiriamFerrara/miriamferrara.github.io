@@ -1,0 +1,270 @@
+/* ==========================================================================
+   SEZIONE ATTESTATI - PERFECTLY ALIGNED WITH PROJECTS
+   ========================================================================== */
+
+#certificates.certificates-page,
+.certificates-page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--bg-light);
+    padding: 100px 48px 10px 48px;
+    box-sizing: border-box;
+    position: relative;
+    background: radial-gradient(
+            circle at top right,
+            rgba(16, 185, 129, 0.12),
+            transparent 55%
+    );
+}
+
+.certificates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* ==========================================================================
+   HEADER SEZIONE
+   ========================================================================== */
+
+.certificates-header {
+    margin-bottom: 3.5rem;
+    text-align: left;
+}
+
+.certificates-title {
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+}
+
+.certificates-title-highlight {
+    background: linear-gradient(135deg, var(--text-main) 20%, var(--emerald-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.certificates-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    font-weight: 400;
+    max-width: 850px;
+    margin: 0;
+    text-wrap: pretty;
+}
+
+/* ==========================================================================
+   LISTA SCHEDE CERTIFICATI
+   ========================================================================== */
+
+.certificates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.cert-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--emerald-primary);
+    box-shadow: 0 14px 30px rgba(16, 185, 129, 0.15);
+}
+
+/* Anteprima Rettangolare dell'Attestato (Formato Documento) */
+.cert-card-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-thumb-wrapper {
+    width: 180px;            /* Ampiezza orizzontale in proporzione diploma */
+    height: 120px;           /* Altezza proporzionata */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    background-color: var(--bg-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Effetto profondità foglio */
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.cert-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* Inquadra la parte alta del certificato */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.cert-card:hover .cert-thumb-wrapper {
+    border-color: var(--emerald-primary);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.2);
+}
+
+.cert-card:hover .cert-thumb-img {
+    transform: scale(1.05);
+}
+
+/* Contenuto Centrale */
+.cert-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.cert-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.cert-issuer {
+    color: var(--emerald-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cert-bullet {
+    color: var(--text-muted);
+}
+
+.cert-date {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.cert-card-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.cert-card-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--emerald-primary);
+    letter-spacing: -0.01em;
+}
+
+.cert-card-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0.4rem 0 0.8rem 0;
+}
+
+/* Tags */
+.cert-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cert-tag {
+    background-color: var(--emerald-soft);
+    color: var(--emerald-primary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Bottone Azione */
+.cert-card-action {
+    display: flex;
+    align-items: center;
+}
+
+.cert-btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    color: var(--emerald-primary);
+    background-color: var(--emerald-soft);
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.cert-btn-pdf:hover {
+    background-color: var(--emerald-primary);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   ANIMAZIONI & RESPONSIVE
+   ========================================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    #certificates.certificates-page,
+    .certificates-page {
+        padding: 80px 1.5rem 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cert-card {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.5rem;
+    }
+
+    .cert-card-left {
+        width: 100%;
+    }
+
+    .cert-thumb-wrapper {
+        width: 100%;
+        height: 180px;
+    }
+
+    .cert-card-action {
+        margin-top: 0.5rem;
+    }
+
+    .certificates-title {
+        font-size: 2rem;
+    }
+}
