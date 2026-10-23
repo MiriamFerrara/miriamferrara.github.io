@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/Footer.css';
 
 function Footer() {
+    const [isQrOpen, setIsQrOpen] = useState(false);
     const currentYear = new Date().getFullYear();
     const cvUrl = `${import.meta.env.BASE_URL}../altro/Miriam_Ferrara_cv.pdf`;
+
+    const driveCvUrl = "https://drive.google.com/file/d/1OFCyjVvyQMYf6X9kNK-Z20uxpXREZQ9Z/view?usp=sharing";
+    const siteUrl = "https://miriamferrara.github.io/";
+
+    const qrCvImg = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(driveCvUrl)}&color=064e3b`;
+    const qrSiteImg = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(siteUrl)}&color=064e3b`;
 
     return (
         <footer className="site-footer">
@@ -24,7 +31,6 @@ function Footer() {
                         <a href="#projects">Progetti</a>
                         <a href="#certificates">Attestati</a>
                         <a href="#contact">Contatti</a>
-                        <a href="#more">Altro</a>
 
                         <a
                             href={cvUrl}
@@ -35,6 +41,15 @@ function Footer() {
                         >
                             CV 🔒
                         </a>
+
+                        {/* Pulsante che apre il Modal */}
+                        <button
+                            type="button"
+                            className="footer-qr-btn"
+                            onClick={() => setIsQrOpen(true)}
+                        >
+                            QR Code 📱
+                        </button>
                     </nav>
 
                     <div className="footer-socials">
@@ -89,6 +104,41 @@ function Footer() {
                 </div>
 
             </div>
+
+            {/* MODAL POP-UP QR CODE */}
+            {isQrOpen && (
+                <div className="qr-modal-overlay" onClick={() => setIsQrOpen(false)}>
+                    <div className="qr-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="qr-modal-close" onClick={() => setIsQrOpen(false)}>
+                            ✕
+                        </button>
+                        <h2>Risorse & QR Code</h2>
+                        <p className="qr-modal-subtitle">Scansiona con lo smartphone per accedere alle risorse</p>
+
+                        <div className="qr-modal-grid">
+                            <div className="qr-modal-card">
+                                <div className="qr-img-box">
+                                    <img src={qrCvImg} alt="QR Code CV" />
+                                </div>
+                                <h3>Curriculum Vitae</h3>
+                                <a href={driveCvUrl} target="_blank" rel="noopener noreferrer" className="qr-modal-link">
+                                    Apri su Drive 📄
+                                </a>
+                            </div>
+
+                            <div className="qr-modal-card">
+                                <div className="qr-img-box">
+                                    <img src={qrSiteImg} alt="QR Code Portfolio" />
+                                </div>
+                                <h3>Sito Web</h3>
+                                <a href={siteUrl} target="_blank" rel="noopener noreferrer" className="qr-modal-link">
+                                    Visita Portfolio 🌐
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </footer>
     );
 }

@@ -1,23 +1,23 @@
 /* ==========================================================================
-   FOOTER (Smeraldo Scuro ad Alto Contrasto)
+   FOOTER (Smeraldo Scuro - Elegante, Spazioso & Bilanciato in px)
    ========================================================================== */
 
 .site-footer {
   --footer-bg: #064e3b;          /* Verde Smeraldo scuro */
   --footer-text-light: #ffffff;   /* Testo/Logo bianco */
-  --footer-text-mint: #a7f3d0;    /* Menta brillante ad alta leggibilità */
-  --footer-accent: #047857;       /* Sfondo icone */
-  --footer-border: #10b981;       /* Bordi icone e separatori */
+  --footer-text-mint: #a7f3d0;    /* Menta brillante */
+  --footer-accent: #047857;       /* Sfondo pulsanti e icone */
+  --footer-border: #10b981;       /* Bordi ed evidenziazioni */
 
   width: 100%;
   background-color: var(--footer-bg);
   color: var(--footer-text-mint);
-  padding: 3.5rem 2rem 2rem 2rem;
+  padding: 50px 20px 30px 20px;  /* Spazioso, bilanciato ai lati e in basso */
   box-sizing: border-box;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
@@ -27,7 +27,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 30px;
 }
 
 .footer-brand {
@@ -35,32 +35,33 @@
 }
 
 .footer-logo {
-  font-size: 1.6rem;
+  font-size: 26px;
   font-weight: 800;
   color: var(--footer-text-light);
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 6px 0;
   letter-spacing: -0.02em;
 }
 
 .footer-brand .footer-tagline {
-  font-size: 0.92rem;
+  font-size: 15px;
   color: var(--footer-text-mint);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.45;
+  opacity: 0.95;
 }
 
 /* LINK NAVIGAZIONE */
 .footer-nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 19px;
   flex-wrap: wrap;
 }
 
 .footer-nav a {
   color: var(--footer-text-mint);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 600;
   transition: color 0.2s ease;
 }
@@ -69,26 +70,29 @@
   color: var(--footer-text-light);
 }
 
-/* PULSANTE RISERVATO CV NEL FOOTER */
-.footer-cv-btn {
+/* PULSANTI AZIONE (CV 🔒 & QR CODE 📱) */
+.footer-cv-btn,
+.footer-qr-btn {
   background-color: var(--footer-accent);
   border: 1px solid var(--footer-border);
-  color: var(--footer-text-mint);
-  font-size: 0.88rem;
+  color: var(--footer-text-light);
+  font-size: 14px;
   font-weight: 700;
-  padding: 0.35rem 0.8rem;
+  padding: 6px 14px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 6px;
   text-decoration: none;
+  font-family: inherit;
 }
 
-.footer-cv-btn:hover {
+.footer-cv-btn:hover,
+.footer-qr-btn:hover {
   background-color: var(--footer-border);
-  color: var(--footer-text-light);
+  color: #ffffff;
   border-color: #34d399;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
@@ -97,7 +101,7 @@
 /* ICONE SOCIAL */
 .footer-socials {
   display: flex;
-  gap: 0.8rem;
+  gap: 12px;
 }
 
 .footer-socials a {
@@ -116,8 +120,8 @@
 
 .footer-socials a:hover {
   background-color: var(--footer-border);
+  color: #ffffff;
   border-color: #34d399;
-  color: var(--footer-text-light);
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
@@ -125,8 +129,8 @@
 /* LINEA DIVISORIA */
 .footer-divider {
   border: none;
-  border-top: 1px solid var(--footer-accent);
-  margin: 2.5rem 0 1.8rem 0;
+  border-top: 1px solid rgba(16, 185, 129, 0.4);
+  margin: 35px 0 26px 0;
 }
 
 /* PARTE INFERIORE */
@@ -135,17 +139,132 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 16px;
 }
 
 .site-footer .footer-bottom p,
 .site-footer .footer-bottom .copyright-text,
 .site-footer .footer-bottom .footer-sub-info {
   color: var(--footer-text-mint);
-  font-size: 0.9rem;
+  font-size: 14px;
   font-weight: 600;
   margin: 0;
   display: block;
+}
+
+/* ==========================================================================
+   MODAL POP-UP QR CODE (Ampio e ben visibile)
+   ========================================================================== */
+
+.qr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.qr-modal-content {
+  background-color: var(--footer-bg);
+  border: 1px solid var(--footer-border);
+  border-radius: 16px;
+  padding: 35px;
+  max-width: 540px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: var(--footer-text-mint);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.qr-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--footer-text-mint);
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.qr-modal-close:hover {
+  color: var(--footer-text-light);
+}
+
+.qr-modal-content h2 {
+  color: var(--footer-text-light);
+  font-size: 26px;
+  margin: 0 0 5px 0;
+}
+
+.qr-modal-subtitle {
+  font-size: 14px;
+  margin-bottom: 29px;
+  opacity: 0.9;
+}
+
+.qr-modal-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.qr-modal-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 20px;
+  border-radius: 14px;
+  flex: 1;
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-img-box {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 13px;
+}
+
+.qr-img-box img {
+  width: 160px;
+  height: 160px;
+  display: block;
+}
+
+.qr-modal-card h3 {
+  color: var(--footer-text-light);
+  font-size: 17px;
+  margin: 0 0 13px 0;
+}
+
+.qr-modal-link {
+  background-color: var(--footer-accent);
+  border: 1px solid var(--footer-border);
+  color: var(--footer-text-light);
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.qr-modal-link:hover {
+  background-color: var(--footer-border);
 }
 
 /* RESPONSIVE */
@@ -159,6 +278,6 @@
   .footer-nav {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.8rem;
+    gap: 13px;
   }
 }

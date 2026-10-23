@@ -8,7 +8,6 @@ import Projects from './components/js/Projects';
 import Certificates from './components/js/Certificates';
 import Contact from './components/js/Contact';
 import Footer from './components/js/Footer';
-import QRCodeSection from './components/js/QRCodeSection';
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -24,7 +23,6 @@ function App() {
                 <Certificates />
                 <Contact />
             </main>
-            <QRCodeSection />
             <Footer />
         </div>
     );
